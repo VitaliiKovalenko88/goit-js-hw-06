@@ -9,6 +9,18 @@
   justify-content: space-between;
 }
 
+.gallery-list__item {
+  max-width: 450px;
+
+  max-height: 250px;
+}
+
+.gallery-list__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
 #validation-input {
   border: 3px solid #bdbdbd;
 }
