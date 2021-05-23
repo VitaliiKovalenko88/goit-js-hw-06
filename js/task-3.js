@@ -15,8 +15,8 @@ const images = [
 
 const makeTransactionItemsGallary = ({ url, alt }) => {
   const imageItemsEl = `
-   <li class='gallery-list__item list'><img class='gallery-list__img' src="${url}" alt="${alt}" width='420'></li>
-   
+   <li class='gallery-list__item list'>
+   <img class='gallery-list__img' src="${url}" alt="${alt}" width='420'></li>
    `;
   return imageItemsEl;
 };
@@ -25,5 +25,7 @@ const listGalleryEl = document.querySelector('#gallery');
 console.log(listGalleryEl);
 listGalleryEl.classList.add('gallery-list');
 
-const transactionItemsGallary = images.map(makeTransactionItemsGallary);
+const transactionItemsGallary = images
+  .map(makeTransactionItemsGallary)
+  .join(' ');
 listGalleryEl.insertAdjacentHTML('beforeend', transactionItemsGallary);
