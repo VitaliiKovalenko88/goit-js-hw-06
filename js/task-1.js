@@ -1,15 +1,15 @@
 const itemsEl = document.querySelectorAll('.item');
 
-const getCategoriesEl = () =>
-  console.log(`В списке ${itemsEl.length} категории.`);
+const getCategoriesEl = ({ length }) =>
+  console.log(`В списке ${length} категории.`);
 
 const getItemsEl = items => {
-  return items.forEach(item => {
-    const title = item.firstElementChild.textContent;
-    const number = item.lastElementChild.children.length;
+  return items.forEach(({ firstElementChild, lastElementChild }) => {
+    const title = firstElementChild.textContent;
+    const number = lastElementChild.children.length;
     console.log(`Категория: ${title}
   Количество елементов: ${number}`);
   });
 };
-getCategoriesEl('.item');
+getCategoriesEl(itemsEl);
 getItemsEl(itemsEl);
