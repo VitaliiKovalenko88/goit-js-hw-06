@@ -7,7 +7,7 @@ const valueEl = document.querySelector('#value');
 const counterValue = valueEl.textContent;
 
 const counter = {
-  value: counterValue === Number,
+  value: Number.parseInt(counterValue),
   increment() {
     this.value += 1;
   },

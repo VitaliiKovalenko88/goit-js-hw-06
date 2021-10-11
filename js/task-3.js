@@ -44,6 +44,7 @@ console.log(getGalleryEl('#gallery'));
 addClassEl(getGalleryEl('#gallery'), 'gallery-list');
 makeTransactionGallary(getGalleryEl('#gallery'));
 
+//
 // listGalleryEl.insertAdjacentHTML('beforeend', makeItemsGallery(images));
 
 // const makeTransactionItemsGallary = ({ url, alt }) => {

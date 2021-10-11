@@ -7,9 +7,9 @@ const refs = {
 refs.input.addEventListener('input', onInputChange);
 
 function onInputChange(event) {
-  console.log(event);
+  console.log(event.currentTarget.value.trim());
   refs.titleName.textContent =
     event.currentTarget.value.trim() !== ''
       ? event.currentTarget.value
-      : 'незнакомец';
+      : 'Anonymous';
 }
