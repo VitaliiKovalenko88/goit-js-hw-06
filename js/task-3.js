@@ -13,19 +13,52 @@ const images = [
   },
 ];
 
-const makeTransactionItemsGallary = ({ url, alt }) => {
-  const imageItemsEl = `
-   <li class='gallery-list__item list'>
-   <img class='gallery-list__img' src="${url}" alt="${alt}" width='420'></li>
-   `;
-  return imageItemsEl;
+const markupItemsGallary = function ({ url, alt }) {
+  const imageItemEl = `<li class='gallery__item list'>
+<img class='gallery__img'
+src='${url}'
+alt='${alt}'
+width='420'>
+</li>`;
+  return imageItemEl;
 };
 
-const listGalleryEl = document.querySelector('#gallery');
-console.log(listGalleryEl);
-listGalleryEl.classList.add('gallery-list');
+const makeItemsGallery = function (img) {
+  return img.map(markupItemsGallary).join('');
+};
 
-const transactionItemsGallary = images
-  .map(makeTransactionItemsGallary)
-  .join(' ');
-listGalleryEl.insertAdjacentHTML('beforeend', transactionItemsGallary);
+const getGalleryEl = function (element) {
+  return document.querySelector(element);
+};
+
+const addClassEl = function (el, name) {
+  el.classList.add(name);
+};
+
+const makeTransactionGallary = function (el) {
+  el.insertAdjacentHTML('beforeend', makeItemsGallery(images));
+};
+
+getGalleryEl('#gallery');
+console.log(getGalleryEl('#gallery'));
+addClassEl(getGalleryEl('#gallery'), 'gallery-list');
+makeTransactionGallary(getGalleryEl('#gallery'));
+
+// listGalleryEl.insertAdjacentHTML('beforeend', makeItemsGallery(images));
+
+// const makeTransactionItemsGallary = ({ url, alt }) => {
+//   const imageItemsEl = `
+//    <li class='gallery-list__item list'>
+//    <img class='gallery-list__img' src="${url}" alt="${alt}" width='420'></li>
+//    `;
+//   return imageItemsEl;
+// };
+
+// const listGalleryEl = document.querySelector('#gallery');
+// console.log(listGalleryEl);
+// listGalleryEl.classList.add('gallery-list');
+
+// const transactionItemsGallary = images
+//   .map(makeTransactionItemsGallary)
+//   .join(' ');
+// listGalleryEl.insertAdjacentHTML('beforeend', transactionItemsGallary);
