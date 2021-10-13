@@ -1,13 +1,13 @@
-const counterEl = document.querySelector('#counter');
+const refs = {
+  counterEl: document.querySelector('#counter'),
+  decrementBtn: document.querySelector('button[data-action="decrement"]'),
+  incrementBtn: document.querySelector('button[data-action="increment"]'),
+  valueEl: document.querySelector('#value'),
+};
 
-const decrementBtn = counterEl.firstElementChild;
-const incrementBtn = counterEl.lastElementChild;
-const valueEl = document.querySelector('#value');
-
-const counterValue = valueEl.textContent;
-
+const counterValue = 0;
 const counter = {
-  value: Number.parseInt(counterValue),
+  value: counterValue,
   increment() {
     this.value += 1;
   },
@@ -15,13 +15,15 @@ const counter = {
     this.value -= 1;
   },
 };
-incrementBtn.addEventListener('click', () => {
+
+console.log(counterValue);
+
+refs.incrementBtn.addEventListener('click', () => {
   counter.increment();
-  console.log(counter.value);
-  valueEl.textContent = counter.value;
+  refs.valueEl.textContent = counter.value;
 });
-decrementBtn.addEventListener('click', () => {
+
+refs.decrementBtn.addEventListener('click', () => {
   counter.decrement();
-  console.log(counter.value);
-  valueEl.textContent = counter.value;
+  refs.valueEl.textContent = counter.value;
 });
