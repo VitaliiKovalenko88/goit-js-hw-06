@@ -33,3 +33,28 @@
 #validation-input.invalid {
   border-color: #f44336;
 }
+#counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+button[data-action] {
+  color: aqua;
+  font-size: 50px;
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  border-radius: 50%;
+  background-attachment: fixed;
+  background-color: tomato;
+  border: navy;
+}
+button[data-action='increment'] {
+  margin-left: 20px;
+}
+
+#value {
+  color: #4caf50;
+  font-size: 80px;
+}
