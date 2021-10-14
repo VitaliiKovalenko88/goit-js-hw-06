@@ -16,8 +16,6 @@ const counter = {
   },
 };
 
-console.log(counterValue);
-
 refs.incrementBtn.addEventListener('click', () => {
   counter.increment();
   refs.valueEl.textContent = counter.value;

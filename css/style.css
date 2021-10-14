@@ -24,10 +24,18 @@
 
 #validation-input {
   border: 3px solid #bdbdbd;
+  outline: none;
+  font-size: 30px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
 }
 
 #validation-input.valid {
   border-color: #4caf50;
+  color: #f44336;
 }
 
 #validation-input.invalid {
