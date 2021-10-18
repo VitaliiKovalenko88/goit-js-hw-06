@@ -6,7 +6,7 @@ const refs = {
 
 refs.button.addEventListener('click', onButtonClick);
 
-function onButtonClick(e) {
+function onButtonClick() {
   const {
     color,
     body: { style },
